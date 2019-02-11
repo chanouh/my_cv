@@ -53,9 +53,9 @@
 						<div class="yui-u first">
 							<h2>Skills</h2>
 						</div>
-						{% for skills in formations %}
-						{{ skills.getNomskills()}}
-						{{ skills.getText()}}
+						{% for skill in skills %}
+						{{ skill.getNomskills()}}
+						{{ skill.getText()}}
 						{% endfor %}
 						
 						<div class="yui-u">

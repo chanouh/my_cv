@@ -48,6 +48,18 @@ class Formation
         return $this;
     }
 
+    public function getSkill(): ?string
+    {
+        return $this->skill;
+    }
+
+    public function setSkills(string $skills): self
+    {
+        $this->nom = $skills;
+
+        return $this;
+    }
+        
     public function getLieu(): ?string
     {
         return $this->lieu;
