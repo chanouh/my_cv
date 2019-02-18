@@ -1,7 +1,7 @@
 # config/routes.yaml
 
 # the "app_lucky_number" route name is not important yet
-app_lucky_number:
+index:
     path: /lucky/number
     controller: App\Controller\LuckyController::number
     
