@@ -7,9 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ApiResource()
- * @ORM\Entity(repositoryClass="App\Repository\LoisirRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\DomaineRepository")
  */
-class Loisir
+class Domaine
 {
     /**
      * @ORM\Id()
@@ -21,21 +21,21 @@ class Loisir
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Nameloisir;
+    private $nameDomaine;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNameloisir(): ?string
+    public function getNameDomaine(): ?string
     {
-        return $this->Nameloisir;
+        return $this->nameDomaine;
     }
 
-    public function setNameloisir(string $Nameloisir): self
+    public function setNameDomaine(string $nameDomaine): self
     {
-        $this->Nameloisir = $Nameloisir;
+        $this->nameDomaine = $nameDomaine;
 
         return $this;
     }

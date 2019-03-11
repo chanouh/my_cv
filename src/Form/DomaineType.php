@@ -2,24 +2,24 @@
 
 namespace App\Form;
 
-use App\Entity\Loisir;
+use App\Entity\Domaine;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class LoisirType extends AbstractType
+class DomaineType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Nameloisir')
+            ->add('nameDomaine')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Loisir::class,
+            'data_class' => Domaine::class,
         ]);
     }
 }

@@ -1,26 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Loisir index{% endblock %}
+{% block title %}Domaine index{% endblock %}
 
 {% block body %}
-    <h1>Loisir index</h1>
+    <h1>Domaine index</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nameloisir</th>
+                <th>NameDomaine</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for loisir in loisirs %}
+        {% for domaine in domaines %}
             <tr>
-                <td>{{ loisir.id }}</td>
-                <td>{{ loisir.Nameloisir }}</td>
+                <td>{{ domaine.id }}</td>
+                <td>{{ domaine.nameDomaine }}</td>
                 <td>
-                    <a href="{{ path('loisir_show', {'id': loisir.id}) }}">show</a>
-                    <a href="{{ path('loisir_edit', {'id': loisir.id}) }}">edit</a>
+                    <a href="{{ path('domaine_show', {'id': domaine.id}) }}">show</a>
+                    <a href="{{ path('domaine_edit', {'id': domaine.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -31,5 +31,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('loisir_new') }}">Create new</a>
+    <a href="{{ path('domaine_new') }}">Create new</a>
 {% endblock %}

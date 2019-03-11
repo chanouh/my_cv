@@ -5,6 +5,14 @@ index:
     path: /lucky/number
     controller: App\Controller\LuckyController::number
     
-app_skills_name:
-    path: /skills-name
-    controller: App\Controller\SkillsController::toito
+create_skill:
+    path: /skill/create
+    controller: App\Controller\SkillsController::create
+    
+edit_skill:
+    path: /skill/edit/{id}
+    controller: App\Controller\SkillsController::edit
+    
+valid_skill:
+    path: /skill/validate
+    controller: App\Controller\SkillsController::valid

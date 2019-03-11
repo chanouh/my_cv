@@ -51,29 +51,22 @@
 
 					<div class="yui-gf">
 						<div class="yui-u first">
-							<h2>Skills</h2>
+							<h2>Loisir</h2>
+							<a href=" {{ path('loisir_new') }}">Create</a>
 						</div>
-						{% for skill in skills %}
-						{{ skill.getNomskills()}}
-						{{ skill.getText()}}
+					
+					
+					
+						{% for loisir in loisirs %}
+							{{ loisir.getNameloisir()}}
+							
+							<a href=" {{ path('loisir_edit', {'id' : loisir.getId() }) }}">Edit</a>
 						{% endfor %}
 						
-						<tbody>
-						{% for skill in skills %}
-						<tr>
-							<td> {{ skill.id }}</td>
-							<td> {{ skill.skills }}</td>
-							<td>
-							<a href=" {{ path('skills_show', {'id' : skills.id}) }}">show</a>
-							</td>
-						</tr>
-						{% else %}
-						<tr>
-							<td collspan="3"> nothing here</td>
-						</tr>
-						{% endfor %}
-						</tbody>
-						
+					
+					
+					
+					
 						<div class="yui-u">
 								<div class="talent">
 									<h2>Web Design</h2>
@@ -94,8 +87,19 @@
 
 					<div class="yui-gf">
 						<div class="yui-u first">
-							<h2>Technical</h2>
+							<h2>Domaines</h2>
 						</div>
+						
+						
+						<a href=" {{ path('domaine_new') }}">Create</a>
+						</div>
+						{% for domaine in domaines %}
+							{{ domaine.getText()}}
+							
+							<a href=" {{ path('domaine_edit', {'id' : domaine.getId() }) }}">Edit</a>
+						{% endfor %}
+						
+						
 						<div class="yui-u">
 							<ul class="talent">
 								<li>XHTML</li>
@@ -120,12 +124,22 @@
 					<div class="yui-gf">
 	
 						<div class="yui-u first">
-							<h2>Experience</h2>
+							<h2>Formation</h2>
 						</div><!--// .yui-u -->
 
 						<div class="yui-u">
 
-							<div class="job">
+							<div class="Formation">
+								<a href=" {{ path('formation_new') }}">Create</a>
+						</div>
+						{% for formation in formations %}
+							{{ formation.getText()}}
+							
+							<a href=" {{ path('formation_edit', {'id' : formation.getId() }) }}">Edit</a>
+						{% endfor %}
+						
+						
+						
 								<h2>Facebook</h2>
 								<h3>Senior Interface Designer</h3>
 								<h4>2005-2007</h4>
@@ -162,10 +176,6 @@
 						<div class="yui-u first">
 							<h2>Education</h2>
 						</div>
-						{% for formation in formations %}
-						{{ formation.getNom()}}
-						{{ formation.getLieu()}}
-						{% endfor %}
 						
 						<div class="yui-u">
 							<h2>Indiana University - Bloomington, Indiana</h2>
@@ -177,18 +187,30 @@
 				</div><!--// .yui-b -->
 			</div><!--// yui-main -->
 		</div><!--// bd -->
-
-   <form id="contactForm" onsubmit="return validate()" action="contact.php" method="post">
-              
-              <input class="formInput" type="text" id="name" name="name" autocorrect="off" placeholder="Name?"/>
-              <input class="formInput" type="email" name="email" id="email" autocapitalize="off" autocorrect="off" placeholder="Email?"/>
-              <textarea class="formInput" name="message" id="message" placeholder="Message?"></textarea>
-             
-             <br>
-                <input class="submitForm" type="reset" value="Clear your message" />
-                <input class="submitForm" type="submit" value="Send"/>
-           
-      </form>
+		
+		<div class="container">  
+  <form id="contact" action="" method="post">
+    <h3>Formulaire de contact</h3>
+    <h4>Contactez moi aujourd'hui, je répond sous 24h !</h4>
+    <fieldset>
+      <input placeholder="Votre nom" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Votre adresse mail" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Votre numéro de telephone" type="tel" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Votre message" tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Envoyer</button>
+    </fieldset>
+  </form>
+ 
+  
+</div>
 
 		<div id="ft">
 			<p>Jonathan Doe &mdash; <a href="mailto:name@yourdomain.com">name@yourdomain.com</a> &mdash; (313) - 867-5309</p>
